@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Script Injector</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="app">
+    <button id="add-script" class="btn-add">+ Add Script</button>
+    <div id="script-list"></div>
+  </div>
+  <script src="js/main.js"></script>
+  <div id="editor-modal" class="modal hidden">
+  <div class="modal-content">
+    <h2>Edit Script: <span id="editor-title"></span></h2>
+    <textarea id="editor-code"></textarea>
+    <div class="editor-buttons">
+      <button id="editor-save">💾 Save</button>
+      <button id="editor-cancel">❌ Cancel</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
