@@ -35,6 +35,14 @@ function loadScripts() {
         }
       };
 
+      div.querySelector(".button-edit").onclick = () => {
+        document.getElementById("editor-modal").classList.remove("hidden");
+        document.getElementById("editor-title").textContent = script.name;
+        csInterface.evalScript(`readScript("${script.name}")`, content => {
+          document.getElementById("editor-code").value = content;
+        });
+      };
+
       list.appendChild(div);
     });
   });
@@ -50,3 +58,19 @@ document.getElementById("add-script").addEventListener("click", () => {
 });
 
 loadScripts();
+
+// Cancelar edición
+document.getElementById("editor-cancel").addEventListener("click", () => {
+  document.getElementById("editor-modal").classList.add("hidden");
+  document.getElementById("editor-code").value = "";
+});
+
+// Guardar edición
+document.getElementById("editor-save").addEventListener("click", () => {
+  const name = document.getElementById("editor-title").textContent;
+  const code = document.getElementById("editor-code").value;
+  csInterface.evalScript(`saveScript("${name}", \`${code}\`)`, () => {
+    document.getElementById("editor-modal").classList.add("hidden");
+    loadScripts();
+  });
+});

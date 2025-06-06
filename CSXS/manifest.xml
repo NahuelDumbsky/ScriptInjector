@@ -1,36 +1,44 @@
-<ExtensionManifest Version="7.0" ExtensionBundleId="com.nahuel.scriptinjector" ExtensionBundleVersion="1.0">
-  <ExtensionList>
-    <Extension Id="ScriptInjector" Version="1.0"/>
-  </ExtensionList>
-  <ExecutionEnvironment>
-    <HostList>
-      <Host Name="PPRO" Version="[0.0,99.9]"/>
-    </HostList>
-    <LocaleList><Locale Code="All"/></LocaleList>
-    <RequiredRuntimeList>
-      <RequiredRuntime Name="CSXS" Version="6.0"/>
-    </RequiredRuntimeList>
-  </ExecutionEnvironment>
-  <DispatchInfoList>
-    <Extension Id="ScriptInjector">
-      <DispatchInfo>
-        <Resources>
-          <MainPath>index.html</MainPath>
-        </Resources>
-        <Lifecycle>
-          <AutoVisible>true</AutoVisible>
-        </Lifecycle>
-        <UI>
-          <Type>Panel</Type>
-          <Menu>Script Injector</Menu>
-          <Geometry>
-            <Size>
-              <Width>300</Width>
-              <Height>500</Height>
-            </Size>
-          </Geometry>
-        </UI>
-      </DispatchInfo>
-    </Extension>
-  </DispatchInfoList>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ExtensionManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   ExtensionBundleId="com.nahuel.scriptinjector"
+                   ExtensionBundleVersion="1.0"
+                   Version="7.0">
+    <ExtensionList>
+        <Extension Id="com.nahuel.scriptinjector.panel"/>
+    </ExtensionList>
+    <ExecutionEnvironment>
+        <HostList>
+            <Host Name="PPRO" Version="[0.0,999.9]"/>
+        </HostList>
+        <LocaleList>
+            <Locale Code="All"/>
+        </LocaleList>
+        <RequiredRuntimeList>
+            <RequiredRuntime Name="CSXS" Version="7.0"/>
+        </RequiredRuntimeList>
+    </ExecutionEnvironment>
+    <DispatchInfoList>
+        <Extension Id="com.nahuel.scriptinjector.panel">
+            <DispatchInfo>
+                <Resources>
+                    <MainPath>index.html</MainPath>
+                    <ScriptPath>./</ScriptPath>
+                    <CEFCommandLine/>
+                </Resources>
+                <Lifecycle>
+                    <AutoVisible>true</AutoVisible>
+                </Lifecycle>
+                <UI>
+                    <Type>Panel</Type>
+                    <Menu>Script Injector</Menu>
+                    <Geometry>
+                        <Size>
+                            <Height>500</Height>
+                            <Width>400</Width>
+                        </Size>
+                    </Geometry>
+                </UI>
+            </DispatchInfo>
+        </Extension>
+    </DispatchInfoList>
 </ExtensionManifest>

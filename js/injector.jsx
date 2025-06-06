@@ -14,6 +14,17 @@ function saveScript(name, code) {
   return true;
 }
 
+function readScript(name) {
+  var file = new File(getScriptFolder().fsName + "/" + name + ".jsx");
+  if (!file.exists) return "";
+  file.encoding = "UTF-8";
+  file.open("r");
+  var content = file.read();
+  file.close();
+  return content;
+}
+
+
 function loadScriptList() {
   var folder = getScriptFolder();
   var files = folder.getFiles("*.jsx");
